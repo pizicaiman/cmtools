@@ -1,3 +1,3 @@
-module "github.com/pizicaiman/cmtools"
+module github.com/pizicaiman/cmtools
 
 go 1.16
