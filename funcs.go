@@ -25,14 +25,14 @@ func GetHostName() string {
 	return name + "v1.0.2"
 }
 
-func GetLocalIp() (string, error) {
+func GetLocalIp() string {
 	conn, err := net.Dial("udp", "8.8.8.8:53")
 	if err != nil {
 		log.Printf("get local addr err:%v", err)
-		return "", err
+		return ""
 	} else {
 		localIp := strings.Split(conn.LocalAddr().String(), ":")[0]
 		conn.Close()
-		return localIp, nil
+		return localIp
 	}
 }
